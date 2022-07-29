@@ -1,0 +1,21 @@
+---
+import Header from "./Header.astro";
+---
+
+<html lang="en" class="h-screen bg-black">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="icon" href="/assets/img/IconMeshed.svg" type="image/x-icon" />
+
+    <title>Astral - Discord Bots</title>
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+  </body>
+</html>

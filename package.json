@@ -1,0 +1,27 @@
+{
+  "name": "@example/minimal",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --port 5500",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^0.3.0",
+    "@astrojs/tailwind": "^0.2.5",
+    "astro": "^1.0.0-rc.2",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.1.2"
+  },
+  "dependencies": {
+    "@astrojs/react": "^0.4.2",
+    "@babel/core": "^7.18.9",
+    "@babel/helper-validator-identifier": "^7.16.7",
+    "@babel/types": "^7.18.9",
+    "@heroicons/react": "^1.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

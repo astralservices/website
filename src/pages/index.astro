@@ -1,0 +1,68 @@
+---
+import { CheckCircleIcon } from "@heroicons/react/solid/esm";
+import Layout from "./components/Layout.astro";
+
+const reasons = [
+  "no coding required",
+  "professional branded bots",
+  "perfect for small servers to large communities",
+];
+---
+
+<Layout>
+  <div
+    class="px-16 pt-12 pb-6 md:px-48 md:pt-48 md:pb-36 animate-fade-in-up motion-reduce:animate-none"
+  >
+    <div class="space-y-6">
+      <h1 class="grid grid-cols-1">
+        <span class="text-4xl font-black text-white md:text-7xl"
+          >Discord bots
+        </span>
+        <span class="text-4xl font-black lowercase text-astral md:text-7xl">
+          <span
+            class="bg-gradient-to-r from-astral-600 to-astral
+          bg-[length:0px_6px]
+          bg-left-bottom
+          bg-no-repeat
+          transition-[background-size]
+          motion-reduce:bg-[length:100%_6px]
+          motion-reduce:transition-none
+          duration-500
+          hover:bg-[length:100%_6px]"
+          >
+            Made easy
+          </span>
+        </span>
+      </h1>
+      <p class="text-xl font-bold text-white">
+        Create a branded bot in less than five minutes with
+        <!-- -->
+        <span class="font-black">Astral</span>
+      </p><button
+        class="px-12 py-2.5 text-white rounded-lg bg-astral hover:bg-astral-600 transition-colors duration-100 font-bold"
+        >sign in with Discord
+      </button>
+      <ul>
+        {reasons.map((r) => (
+          <li class="flex items-center space-x-2 align-middle group">
+            <CheckCircleIcon className="w-5 h-5 text-white motion-safe:group-hover:text-astral motion-safe:transition-colors duration-500" />
+            <span class="text-xl font-bold text-white">
+              <span
+                class="bg-gradient-to-r from-astral-600 to-astral
+        bg-[length:0px_3px]
+        bg-left-bottom
+        bg-no-repeat
+        transition-[background-size]
+        motion-reduce:transition-none
+        duration-500
+        motion-safe:hover:bg-[length:100%_3px]"
+              >
+                {r}
+              </span>
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Layout>
