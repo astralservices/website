@@ -7,10 +7,11 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://astralapp.io",
   integrations: [react(), tailwind(), sitemap(), partytown()],
   vite: {
     define: {
-      "process.env": JSON.stringify(process.env)
-    }
-  }
+      "process.env": JSON.stringify(process.env),
+    },
+  },
 });
