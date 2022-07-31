@@ -6,4 +6,9 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind(), sitemap()],
+  vite: {
+    define: {
+      "process.env": JSON.stringify(process.env),
+    },
+  },
 });

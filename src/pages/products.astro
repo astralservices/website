@@ -1,0 +1,59 @@
+---
+import Layout from "../components/Layout.astro";
+
+const Products = [
+  {
+    title: "Astral Bots",
+    description:
+      "Astral Bots is a Discord bot that allows you to create your own custom bot with a simple to use web interface.",
+    image:
+      "https://docs.astralapp.io/docs/get-started/create-a-bot/new-bot.png",
+  },
+  {
+    title: "Astral Sites (Coming Soon)",
+    description:
+      "Astral Sites allows you to easily create your own website and host it on our servers.",
+    image: "",
+  },
+];
+---
+
+<Layout>
+  <div
+    class="px-16 pt-12 pb-6 md:px-48 md:pt-48 md:pb-36 animate-fade-in-up motion-reduce:animate-none"
+  >
+    <div class="space-y-6 mb-40">
+      <h1 class="grid grid-cols-1">
+        <span class="text-4xl text-white md:text-7xl font-black"
+          >Our <span class="text-astral">Services</span>
+        </span>
+      </h1><button
+        class="px-12 py-2.5 text-white rounded-lg bg-astral hover:bg-astral-600 transition-colors duration-100"
+        >Get Started
+      </button>
+    </div>
+    <div class="grid grid-cols-1 gap-y-8">
+      {Products.map((product) => (
+        <div class="grid grid-cols-2 items-center flex-wrap space-y-6">
+          <div class="space-y-6">
+            <h1 class="grid w-full grid-cols-1">
+              <span class="text-2xl text-white md:text-4xl font-black">
+                {product.title}
+              </span>
+            </h1>
+            <p class="w-full text-xl text-white font-bold">
+              {product.description}
+            </p>
+          </div>
+
+          <div class="w-full">
+            <img
+              class="w-full h-full object-cover rounded-lg"
+              src={product.image}
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

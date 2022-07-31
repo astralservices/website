@@ -1,0 +1,183 @@
+---
+import CTA from "../components/CTA.astro";
+import Layout from "../components/Layout.astro";
+import { ServerIcon } from "@heroicons/react/solid";
+import {
+  Cloudflare,
+  Docker,
+  Googlecloud,
+  Stripe,
+  Supabase,
+  Tailwindcss,
+  Astro as AstroIcon,
+  Go,
+} from "@icons-pack/react-simple-icons";
+
+const Technologies: {
+  name: string;
+  Icon: any;
+  iconClass: string;
+  reason: string;
+}[] = [
+  {
+    name: "Astro",
+    Icon: AstroIcon,
+    iconClass: "w-10 h-10 text-white",
+    reason:
+      "Astro powers all of our websites using Serverside Rendering and Static Site Generation.",
+  },
+  {
+    name: "TailwindCSS",
+    Icon: Tailwindcss,
+    iconClass: "w-10 h-10 text-cyan-500",
+    reason: "We use TailwindCSS to style our components and pages.",
+  },
+  {
+    name: "Go",
+    Icon: Go,
+    iconClass: "w-10 h-10 text-[#00ADD8]",
+    reason: "We use Go to power our bots and API.",
+  },
+  {
+    name: "Supabase",
+    Icon: Supabase,
+    iconClass: "w-10 h-10 text-green-400",
+    reason: "Our central database that powers our various services.",
+  },
+  {
+    name: "Docker",
+    Icon: Docker,
+    iconClass: "w-10 h-10 text-blue-500",
+    reason: "Helps us run our services on our many servers.",
+  },
+  {
+    name: "GCP Cloud Build",
+    Icon: Googlecloud,
+    iconClass: "w-10 h-10 text-white",
+    reason: "Builds our various Docker images on every push.",
+  },
+  {
+    name: "Stripe",
+    Icon: Stripe,
+    iconClass: "w-10 h-10 text-blue-600",
+    reason: "Processes payments for our services.",
+  },
+  {
+    name: "Cloudflare",
+    Icon: Cloudflare,
+    iconClass: "w-10 h-10 text-amber-500",
+    reason:
+      "Protects our websites from DDOS attacks, also hosts some webpages.",
+  },
+  {
+    name: "Infrastructure",
+    Icon: ServerIcon,
+    iconClass: "w-10 h-10 text-white",
+    reason: "We currently primarily use Hetzner servers.",
+  },
+];
+
+const { result: team }: { result: any[] } = await fetch(
+  "https://api.astralapp.io/api/v1/team"
+).then((res) => res.json());
+
+team.sort((a, b) => a.id - b.id);
+---
+
+<Layout>
+  <div
+    class="px-16 pt-12 pb-6 md:px-48 md:pt-48 md:pb-36 animate-fade-in-up motion-reduce:animate-none"
+  >
+    <div class="space-y-6">
+      <h1 class="grid grid-cols-2">
+        <span class="text-4xl text-white md:text-7xl font-black">
+          About Us
+        </span>
+        <img
+          src="/assets/img/IconMeshed.png"
+          class="w-20 mx-12 justify-self-end"
+          alt="Icon"
+        />
+      </h1>
+      <section class="space-y-6">
+        <p class="text-xl text-white font-semibold">
+          Hey there! We&apos;re Astral.{" "}
+          We&apos;re building a new kind of Discord bot.
+        </p>
+        <p class="text-xl text-white font-semibold">
+          Astral uses state-of-the-art technology to create and host custom
+          Discord bots.
+        </p>
+      </section>
+      <section class="space-y-6">
+        <span class="text-2xl text-white md:text-3xl font-black">
+          Meet the Team
+        </span>
+        <div class="grid justify-start grid-cols-2 gap-4">
+          {team.map((member) => (
+            <div class="flex flex-col items-center space-y-2">
+              <img
+                src={member.user.identity_data.avatar_url}
+                class="w-20 h-20 rounded-full"
+                alt={member.name}
+              />
+
+              <span class="text-xl text-white font-black">{member.name}</span>
+              <span class="text-xs font-bold text-gray-200">
+                {member.pronouns}
+              </span>
+              <span class="text-sm font-bold text-white">{member.role}</span>
+              <span class="text-sm font-bold text-white">
+                {member.location}
+              </span>
+
+              <span class="font-sans text-sm font-semibold text-white">
+                {member.about}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section class="space-y-6">
+        <span class="text-2xl text-white lowercase md:text-3xl font-black">
+          Our Tech Stack
+        </span>
+        <div class="grid justify-start grid-cols-1 gap-4">
+          <p class="text-lg font-semibold text-white">
+            We use a multitude of technologies to develop Astral:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2">
+            {Technologies.map((tech) => (
+              <div class="flex flex-col items-center p-4 space-y-2 transition-colors duration-200 border border-gray-600 bg-not-quite-black hover:bg-black">
+                <tech.Icon className={tech.iconClass} />
+                <span class="text-sm font-bold text-white">{tech.name}</span>
+                <span class="text-xs font-bold text-gray-200">
+                  {tech.reason}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p class="text-lg font-semibold text-white">
+            Have any questions about our tech stack? Send us an email at{" "}
+            <a
+              href="mailto:devops@astralapp.io"
+              class="text-white bg-gradient-to-r from-astral-600 to-astral
+              bg-[length:0px_3px]
+              bg-left-bottom
+              bg-no-repeat
+              transition-[background-size]
+              motion-reduce:bg-[length:100%_3px]
+              motion-reduce:transition-none
+              duration-200
+              motion-safe:hover:bg-[length:100%_3px]"
+            >
+              devops@astralapp.io
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <CTA />
+</Layout>
