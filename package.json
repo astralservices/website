@@ -12,6 +12,7 @@
     "@astrojs/partytown": "^0.1.9",
     "@astrojs/sitemap": "^0.3.0",
     "@astrojs/tailwind": "^0.2.5",
+    "@astrojs/turbolinks": "^0.1.4",
     "astro": "1.0.0-rc.2",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.1.2"
@@ -23,6 +24,7 @@
     "@babel/types": "^7.18.9",
     "@heroicons/react": "^1.0.6",
     "@icons-pack/react-simple-icons": "^5.2.0",
+    "@julian_cataldo/astro-prefetch": "^0.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-globe.gl": "^2.22.1"

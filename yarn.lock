@@ -134,6 +134,13 @@
     "node-fetch" "^3.2.5"
     "which-pm-runs" "^1.1.0"
 
+"@astrojs/turbolinks@^0.1.4":
+  "integrity" "sha512-p6CBacV+wHGtRlfRJ1kSu+mxHm5sFe3oN71WQ3kkDEU00x6KwWC7C+Ok3NLI7EZXHdBs4SglXJdZeY7vLfmk+g=="
+  "resolved" "https://registry.npmjs.org/@astrojs/turbolinks/-/turbolinks-0.1.4.tgz"
+  "version" "0.1.4"
+  dependencies:
+    "turbolinks" "^5.2.0"
+
 "@astrojs/webapi@^0.12.0":
   "integrity" "sha512-rie5SYbvXVykKYBsNFnkUtDe7/0mGmrvj7Gg5pOKV34Cg/CrCJbvUSwH2oyCG2OLGtN2ttUOLvSgnVq3eipCsQ=="
   "resolved" "https://registry.npmjs.org/@astrojs/webapi/-/webapi-0.12.0.tgz"
@@ -424,6 +431,11 @@
   dependencies:
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
+
+"@julian_cataldo/astro-prefetch@^0.12.2":
+  "integrity" "sha512-SpN1fv+it41p2Q3vJbfsfcu50Gt6gDWTr6G4T436Fy3Uhzo87mJiB33ch8lFo8bgNc6C9Lt2MwYazEKoQG2Nzg=="
+  "resolved" "https://registry.npmjs.org/@julian_cataldo/astro-prefetch/-/astro-prefetch-0.12.2.tgz"
+  "version" "0.12.2"
 
 "@ljharb/has-package-exports-patterns@^0.0.2":
   "integrity" "sha512-4/RWEeXDO6bocPONheFe6gX/oQdP/bEpv0oL4HqjPP5DCenBSt0mHgahppY49N0CpsaqffdwPq+TlX9CYOq2Dw=="
@@ -3758,6 +3770,11 @@
   "version" "2.2.2"
   dependencies:
     "esbuild" "^0.14.0"
+
+"turbolinks@^5.2.0":
+  "integrity" "sha512-pMiez3tyBo6uRHFNNZoYMmrES/IaGgMhQQM+VFF36keryjb5ms0XkVpmKHkfW/4Vy96qiGW3K9bz0tF5sK9bBw=="
+  "resolved" "https://registry.npmjs.org/turbolinks/-/turbolinks-5.2.0.tgz"
+  "version" "5.2.0"
 
 "type-fest@^0.13.1":
   "integrity" "sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg=="

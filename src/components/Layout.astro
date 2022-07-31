@@ -1,6 +1,8 @@
 ---
 import Footer from "./Footer.astro";
 import Header from "./Header.astro";
+
+import Prefetch from "@julian_cataldo/astro-prefetch/Prefetch.astro";
 ---
 
 <html lang="en" class="h-screen bg-black">
@@ -13,6 +15,8 @@ import Header from "./Header.astro";
     <link rel="icon" href="/assets/img/IconMeshed.svg" type="image/x-icon" />
 
     <title>Astral - Discord Bots</title>
+
+    <Prefetch max={4} />
 
     <script type="text/partytown">
       (function (h, o, t, j, a, r) {
