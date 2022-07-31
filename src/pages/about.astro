@@ -90,12 +90,12 @@ team.sort((a, b) => a.id - b.id);
   >
     <div class="space-y-6">
       <h1 class="grid grid-cols-2">
-        <span class="text-4xl text-white md:text-7xl font-black">
+        <span class="text-2xl text-white md:text-7xl font-black">
           About Us
         </span>
         <img
           src="/assets/img/IconMeshed.png"
-          class="w-20 mx-12 justify-self-end"
+          class="w-20 justify-self-end"
           alt="Icon"
         />
       </h1>
@@ -113,7 +113,7 @@ team.sort((a, b) => a.id - b.id);
         <span class="text-2xl text-white md:text-3xl font-black">
           Meet the Team
         </span>
-        <div class="grid justify-start grid-cols-2 gap-4">
+        <div class="grid justify-start md:grid-cols-2 gap-4">
           {team.map((member) => (
             <div class="flex flex-col items-center space-y-2">
               <img
