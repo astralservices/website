@@ -7,17 +7,10 @@ import {
   BadgeCheckIcon,
 } from "@heroicons/react/solid/esm/index.js";
 import Layout from "../components/Layout.astro";
-import Globe from "../components/globe";
 import CTA from "../components/CTA.astro";
 
 const { result: stats }: { result: any[] } = await fetch(
   "https://api.astralapp.io/api/v1/stats"
-).then((res) => {
-  return res.json();
-});
-
-const { result: regions }: { result: any[] } = await fetch(
-  "https://api.astralapp.io/api/v1/regions"
 ).then((res) => {
   return res.json();
 });
@@ -32,7 +25,7 @@ const parseStat = (stat: any): any => {
 const ctaReasons = [
   "no coding required",
   "professional branded bots",
-  "perfect for small servers to large communities",
+  "perfect for all communities",
 ];
 
 const reasons = [
@@ -131,7 +124,7 @@ const plans = [
       </p>
       <a
         href="https://dash.astralapp.io"
-        class="px-12 py-2.5 text-white text-center col-span-1 rounded-lg bg-astral hover:bg-astral-600 transition-colors duration-100 font-bold"
+        class="px-12 py-2.5 text-white text-center md:col-span-1 col-span-full rounded-lg bg-astral hover:bg-astral-600 transition-colors duration-100 font-bold"
         >Sign in with Discord
       </a>
       <ul class="col-span-full">
@@ -223,7 +216,7 @@ const plans = [
   </noscript> -->
 
   <div
-    class="grid justify-center w-full grid-cols-1 gap-4 px-16 py-6 md:px-24 md:py-16"
+    class="grid justify-center w-full grid-cols-1 gap-4 px-8 py-6 md:px-24 md:py-16"
   >
     <h2 class="text-4xl text-center text-white font-black">Pricing</h2>
     <ul class="grid grid-cols-1 gap-8 mt-16 md:grid-cols-3">
@@ -231,7 +224,7 @@ const plans = [
         <li class="grid items-center p-12 bg-white rounded-md gap-y-5">
           <h3 class="text-2xl text-black font-bold">{plan.name}</h3>
           <div class="space-y-1">
-            <h1 class="text-6xl text-black font-black">
+            <h1 class="md:text-6xl text-4xl text-black font-black">
               {new Intl.NumberFormat("en-US", {
                 currency: "USD",
                 style: "currency",
