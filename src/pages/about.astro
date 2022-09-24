@@ -67,7 +67,7 @@ const Technologies: {
     Icon: Cloudflare,
     iconClass: "w-10 h-10 text-amber-500",
     reason:
-      "Protects our websites from DDOS attacks, also hosts some webpages.",
+      "Protects our websites from DDOS attacks, also hosts some webpages. Cloudflare also handles our load balancing.",
   },
   {
     name: "Infrastructure",
@@ -117,7 +117,7 @@ team.sort((a, b) => a.id - b.id);
           {team.map((member) => (
             <div class="flex flex-col items-center space-y-2">
               <img
-                src={member.user.identity_data.avatar_url}
+                src={member.user.identity_data.avatar ? `https://cdn.discordapp.com/avatars/${member.user.identity_data.id}/${member.user.identity_data.avatar}.${member.user.identity_data.avatar.startsWith("a_") ? "gif" : "png"}?size=256` : 'https://cdn.discordapp.com/embed/avatars/0.png'}
                 class="w-20 h-20 rounded-full"
                 alt={member.name}
               />
@@ -139,7 +139,7 @@ team.sort((a, b) => a.id - b.id);
         </div>
       </section>
       <section class="space-y-6">
-        <span class="text-2xl text-white lowercase md:text-3xl font-black">
+        <span class="text-2xl text-white md:text-3xl font-black">
           Our Tech Stack
         </span>
         <div class="grid justify-start grid-cols-1 gap-4">
