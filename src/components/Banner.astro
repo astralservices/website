@@ -1,0 +1,24 @@
+---
+import { Astro } from "@icons-pack/react-simple-icons";
+
+const { content, link, hover } = Astro.props;
+---
+
+<div
+  class={`${
+    hover ? "absolute" : ""
+  } z-50 w-full p-3 font-bold text-center text-white from-astral-400 to-astral-500 bg-gradient-to-r`}
+>
+  {link && (
+    <a
+      href={link}
+      class="w-full h-full"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {content}
+    </a>
+  )}
+
+  {!link && <div class="w-full h-full">{content}</div>}
+</div>

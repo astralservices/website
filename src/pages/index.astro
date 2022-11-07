@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/solid/esm/index.js";
 import Layout from "../components/Layout.astro";
 import CTA from "../components/CTA.astro";
+import Banner from "../components/Banner.astro";
 
 const { result: stats }: { result: any[] } = await fetch(
   "https://api.astralapp.io/api/v1/stats"
@@ -122,6 +123,19 @@ const plans = [
           >Astral
         </span>
       </p>
+      <a
+        href="https://www.producthunt.com/posts/astral-5?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-astral-5"
+        target="_blank"
+        class="col-span-full"
+      >
+        <img
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=366181&theme=dark"
+          alt="Astral - Create a customized Discord bot in minutes with Astral. | Product Hunt"
+          style="width: 250px; height: 54px;"
+          width="250"
+          height="54"
+        />
+      </a>
       <a
         href="https://dash.astralapp.io"
         class="px-12 py-2.5 text-white text-center lg:col-span-2 md:col-span-3 col-span-full rounded-lg bg-astral hover:bg-astral-600 transition-colors duration-100 font-bold"
@@ -254,18 +268,16 @@ const plans = [
             ))}
           </ul>
           {plan.priceMonthly > 0 ? (
-            <a
-            class="w-full px-4 py-2 text-center text-white cursor-not-allowed opacity-75 rounded-md bg-astral duration-200 transition-colors font-bold"
-          >
-            Soon!
-          </a>
+            <a class="w-full px-4 py-2 text-center text-white cursor-not-allowed opacity-75 rounded-md bg-astral duration-200 transition-colors font-bold">
+              Soon!
+            </a>
           ) : (
-          <a
-            class="w-full px-4 py-2 text-center text-white rounded-md bg-astral hover:bg-astral-600 duration-200 transition-colors font-bold"
-            href="https://dash.astralapp.io/new"
-          >
-            Get Started
-          </a>
+            <a
+              class="w-full px-4 py-2 text-center text-white rounded-md bg-astral hover:bg-astral-600 duration-200 transition-colors font-bold"
+              href="https://dash.astralapp.io/new"
+            >
+              Get Started
+            </a>
           )}
         </li>
       ))}
